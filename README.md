@@ -32,3 +32,8 @@ linux:
 visit:https://chromedriver.storage.googleapis.com/index.html
 download your chrome driver
 
+##Run app
+
+use command:
+python3 app.py
+
