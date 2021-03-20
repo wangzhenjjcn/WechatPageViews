@@ -10,9 +10,6 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-
-
-
 def initDriver(chromeDriverFile,userDataPath):  
     driver=None 
     _userDataPath=userDataPath
@@ -48,7 +45,6 @@ def initDriver(chromeDriverFile,userDataPath):
         chrome_options.add_argument('--ignore-ssl-errors')
         chrome_options.add_argument('window-size=1920x1080')
         # chrome_options.add_argument('--disable-dev-shm-usage')
-        # self.Logger("     --disable-dev-shm-usage")
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--disable-gpu')
         driver = webdriver.Chrome(
@@ -59,8 +55,6 @@ def initDriver(chromeDriverFile,userDataPath):
         print(str(e))
     print("Chrome Ready...")
     return driver
-
-
 
 if __name__ == "__main__":
     sysdir=os.path.dirname(os.path.realpath(sys.argv[0]))
@@ -84,5 +78,3 @@ if __name__ == "__main__":
         ActionChains(webdriver).key_up(Keys.HOME).perform()
         webdriver.delete_all_cookies()
         time.sleep(int(sleepTime))
-
-
